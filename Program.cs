@@ -345,7 +345,14 @@ namespace ConsoleApp2
                     "0. Выход из программы\n" +
                     "\n" +
                     "Для выбора введите цифру...");
-                a = Convert.ToInt32(Console.ReadLine());
+                string[] S;
+                S = Console.ReadLine().Split(' ');
+                while(!Check(S, 1))// Считывание строки пока она не будет введена правильно
+                {
+                    Console.WriteLine("Введите число еще раз");
+                    S = Console.ReadLine().Split(' ');
+                }
+                a = Convert.ToInt32(S[0]);
                 switch (a)
                 {
                     case 0:
